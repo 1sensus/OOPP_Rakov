@@ -1,48 +1,26 @@
-﻿#include <iostream>
-#include <string>
-#include <algorithm>
-#include "Obj_class.cpp";
+﻿#pragma once
+#include "Header.h"
+#include"Obj_head.h"
+#include"Container_head.h"
 
 
 using namespace std;
 
-void Print_menu() 
-{
-	
-	system("cls");
-	cout << "1.New object"<<endl<<"2.View object"<<endl<<"3.Read from file"<<endl<<"4.Write to file"<<endl<<"0.Exit"<<endl;
-}
-int get_var()
-{
-	int number;
-	while (true)
-	{
-		cin >> number;
-		if (cin.fail())
-		{
-			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			cout << "Invalid input " << endl;
-		}
-		else
-			break;
-		cout << "Try again" << endl;
-	}
-	return number;
-}
+
 int main()	
 {
+	setlocale(LC_ALL, "ru");
+	unordered_map<int, RMS_obj> obj_umap = {};
 	int var=-1;
 	while (var != 0)
 	{
 		Print_menu();
-		var = get_var();
-		switch (var)
+		switch (var = get_var())
 		{
 		case 1:
 			{
 			system("cls");
-			cout << "srabotala 1";
+			Container::Add_obj(obj_umap);
 			system("pause");
 			system("cls");			
 			break;
@@ -50,8 +28,55 @@ int main()
 		case 2:
 			{
 			system("cls");
-			a.Print_cout();
-			a1.Print_cout();
+			if (obj_umap.empty())cout << "Список пуст"<<endl;
+			Container::Print_all(obj_umap);
+			system("pause");
+			system("cls");
+			break;
+			}
+		case 3:
+			{
+			system("cls");
+			Container::File_reader(obj_umap);
+			system("pause");
+			system("cls");
+			break;
+			}
+		case 4:
+			{
+			system("cls");
+			Container::File_outer(obj_umap);
+			system("pause");
+			system("cls");
+			break;
+			}
+		case 5:
+			{
+			system("cls");
+			int var5 = -1;
+			while (var5 != 0)
+			{
+				cout << "1.Очистить все" << endl << "2.Очистить диапозон" <<endl<<"0.Назад"<< endl;
+				switch (var5=get_var())
+				{
+				case 1:
+					{
+					system("cls");
+					Container::Delete_all(obj_umap);					
+					system("pause");
+					system("cls");
+					break;
+					}
+				case 2:
+					{
+						system("cls");
+						Container::Delete_diap(obj_umap);
+						system("pause");
+						system("cls");
+						break;
+					}
+				}
+			}
 			system("pause");
 			system("cls");
 			break;

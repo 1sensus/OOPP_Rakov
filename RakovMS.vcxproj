@@ -154,9 +154,11 @@
     <ClCompile Include="Container_class.cpp" />
     <ClCompile Include="Obj_class.cpp" />
     <ClCompile Include="RakovMS.cpp" />
+    <ClCompile Include="Gen_fun.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Container_head.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="Obj_head.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

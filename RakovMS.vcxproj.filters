@@ -24,12 +24,18 @@
     <ClCompile Include="Container_class.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Gen_fun.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Obj_head.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="Container_head.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Header.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>

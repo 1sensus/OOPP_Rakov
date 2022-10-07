@@ -1,5 +1,2 @@
-﻿  Obj_class.cpp
-  RakovMS.cpp
-C:\Users\student\Documents\GitHub\OOPP_Rakov\RakovMS.cpp(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  Generating Code...
-  RakovMS.vcxproj -> C:\Users\student\Documents\GitHub\OOPP_Rakov\Debug\RakovMS.exe
+﻿  RakovMS.vcxproj -> D:\git\OOPP_Rakov\Debug\RakovMS.exe
+  RakovMS.vcxproj -> D:\git\OOPP_Rakov\Debug\RakovMS.pdb (частичный -> полный PDB)
