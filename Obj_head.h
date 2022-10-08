@@ -16,7 +16,7 @@ private:
 public:
 	static int max_id;
 	RMS_obj();
-	//~RMS_obj();
+	~RMS_obj();
 	void Delete_obj();
 	int Get_id()const;
 	string Get_name()const;

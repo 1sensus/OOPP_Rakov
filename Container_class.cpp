@@ -119,12 +119,9 @@ void Container::Delete_diap(unordered_map<int, RMS_obj>& obj_umap)
 }
 void Container::Delete_all(unordered_map<int, RMS_obj>& obj_umap)
 {
-	for (int i = 0; i != obj_umap.size(); i++)
+	for (auto b=obj_umap.begin();b!=obj_umap.end();b++)
 	{
-		if (obj_umap.find(i) != obj_umap.end())
-		{
-			obj_umap[i].Delete_obj();
-		}
+		delete *b;
 	}
 	int a;
 	obj_umap.clear();
