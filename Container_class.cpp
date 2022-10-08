@@ -77,7 +77,7 @@ void Container:: File_reader(unordered_map<int, RMS_obj>& obj_umap)
 	if (!read_file.is_open()) { cout << "Îøèáêà!!!"; }
 	else
 	{
-		obj_umap.clear();
+		//obj_umap.clear();
 		int kol_obj;
 		read_file >> kol_obj;
 		read_file >> RMS_obj::max_id;
@@ -112,12 +112,21 @@ void Container::Delete_diap(unordered_map<int, RMS_obj>& obj_umap)
 	{
 		if (obj_umap.find(l_bord)!=obj_umap.end())
 		{
+			obj_umap[l_bord].Delete_obj();
 			obj_umap.erase(l_bord);
 		};
 	}
 }
 void Container::Delete_all(unordered_map<int, RMS_obj>& obj_umap)
 {
+	for (int i = 0; i != obj_umap.size(); i++)
+	{
+		if (obj_umap.find(i) != obj_umap.end())
+		{
+			obj_umap[i].Delete_obj();
+		}
+	}
+	int a;
 	obj_umap.clear();
 		
 }

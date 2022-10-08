@@ -12,6 +12,7 @@ using namespace std;
 
 	int RMS_obj::max_id = -1;
 	RMS_obj::RMS_obj(){ id = -1; name = ""; age = -1; sex = ""; }
+	void RMS_obj:: Delete_obj() { delete this; }
 	int RMS_obj::Get_id()const { return id; }
 	string RMS_obj::Get_name()const {return name;}
 	int RMS_obj::Get_age() const {return age; }

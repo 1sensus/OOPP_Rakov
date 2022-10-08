@@ -1,1 +1,2 @@
 C:\Users\student\Documents\GitHub\OOPP_Rakov\Debug\RakovMS.exe
+C:\Users\student\Documents\GitHub\OOPP_Rakov\Debug\RakovMS.pdb
