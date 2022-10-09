@@ -37,6 +37,7 @@ int main()
 		case 3:
 			{
 			system("cls");
+			for(int i=0;i<10000;i++)
 			Container::File_reader(obj_umap);
 			system("pause");
 			system("cls");
@@ -81,6 +82,13 @@ int main()
 			system("cls");
 			break;
 			}
+		case 6:
+		{
+			RMS_obj obj1;
+			RMS_obj obj2;
+			RMS_obj obj3;
+			RMS_obj obj4;
+		}
 		}
 	}
 	system("pause");

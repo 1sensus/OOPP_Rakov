@@ -53,9 +53,7 @@ void Container::File_outer(unordered_map<int, RMS_obj>& obj_umap)
 	}
 	else
 	{
-		size_t a = obj_umap.size();
-		file_out << a << endl;
-		file_out << RMS_obj::max_id << endl;
+		file_out << RMS_obj::max_id-1 << endl;
 		for (;it!=obj_umap.end();it++) 
 		{
 			file_out << it->second;
@@ -68,27 +66,27 @@ void Container:: File_reader(unordered_map<int, RMS_obj>& obj_umap)
 {
 	ifstream read_file;
 	cout << "Введите название файла для чтения" << endl;
-	string file;
-	cin.ignore();
-	getline(cin, file);
+	string file="xd";
+	//cin.ignore();
+	//getline(cin, file);
 	size_t cheke = file.find(".txt");
 	if (cheke == -1) file += ".txt";
 	read_file.open(file, ifstream::in);
 	if (!read_file.is_open()) { cout << "Ошибка!!!"; }
 	else
 	{
-		//obj_umap.clear();
-		int kol_obj;
-		read_file >> kol_obj;
-		read_file >> RMS_obj::max_id;
+		int max_id_f;
+		read_file >> max_id_f;
 		while (!read_file.eof())
 		{
-			for (int i = 0; i < kol_obj; ++i)
+			for (int i = 1; i <= max_id_f+1; ++i)
 			{
 				RMS_obj obj;
 				read_file >> obj;
+				obj.Set_id(RMS_obj::max_id + i);
 				obj_umap.emplace(obj.Get_id(), obj);
 			}
+			RMS_obj::max_id += max_id_f + 1;
 			break;
 		}cout << "Файл считан" << endl; read_file.close();
 	}
@@ -112,18 +110,12 @@ void Container::Delete_diap(unordered_map<int, RMS_obj>& obj_umap)
 	{
 		if (obj_umap.find(l_bord)!=obj_umap.end())
 		{
-			obj_umap[l_bord].Delete_obj();
+			//obj_umap[l_bord].Delete_obj();
 			obj_umap.erase(l_bord);
 		};
 	}
 }
 void Container::Delete_all(unordered_map<int, RMS_obj>& obj_umap)
 {
-	for (auto b=obj_umap.begin();b!=obj_umap.end();b++)
-	{
-		delete *b;
-	}
-	int a;
 	obj_umap.clear();
-		
 }
