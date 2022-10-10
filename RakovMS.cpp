@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Header.h"
-#include"Obj_head.h"
-#include"Container_head.h"
+#include"RMS_Obj_head.h"
+#include"RMS_Container_head.h"
 
 
 using namespace std;
@@ -20,7 +20,7 @@ int main()
 		case 1:
 			{
 			system("cls");
-			Container::Add_obj(obj_umap);
+			RMS_Container::Add_obj(obj_umap);
 			system("pause");
 			system("cls");			
 			break;
@@ -29,7 +29,7 @@ int main()
 			{
 			system("cls");
 			if (obj_umap.empty())cout << "Список пуст"<<endl;
-			Container::Print_all(obj_umap);
+			RMS_Container::Print_all(obj_umap);
 			system("pause");
 			system("cls");
 			break;
@@ -37,8 +37,8 @@ int main()
 		case 3:
 			{
 			system("cls");
-			for(int i=0;i<10000;i++)
-			Container::File_reader(obj_umap);
+			for(int i=0;i<10;i++)// // //
+			RMS_Container::File_reader(obj_umap);
 			system("pause");
 			system("cls");
 			break;
@@ -46,7 +46,7 @@ int main()
 		case 4:
 			{
 			system("cls");
-			Container::File_outer(obj_umap);
+			RMS_Container::File_outer(obj_umap);
 			system("pause");
 			system("cls");
 			break;
@@ -63,7 +63,7 @@ int main()
 				case 1:
 					{
 					system("cls");
-					Container::Delete_all(obj_umap);					
+					RMS_Container::Delete_all(obj_umap);					
 					system("pause");
 					system("cls");
 					break;
@@ -71,7 +71,7 @@ int main()
 				case 2:
 					{
 						system("cls");
-						Container::Delete_diap(obj_umap);
+						RMS_Container::Delete_diap(obj_umap);
 						system("pause");
 						system("cls");
 						break;
